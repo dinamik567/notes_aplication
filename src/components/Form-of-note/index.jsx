@@ -1,10 +1,24 @@
 import { Button, FloatingLabel, Form, Stack } from "react-bootstrap"
+import { useDispatch } from "react-redux";
+import { addNote } from "../../store/notes-slice";
+import { convertTime } from "./utils";
+import { useState } from "react";
 
 export const FormOfNote = () => {
+    const [noteValue, setNoteValue] = useState('');
+    const dispatch = useDispatch();
 
+    const changeNoteHandler = (e) => {
+        setNoteValue(e.target.value)
+    }
+    
     const submitFormHandler = (e) => {
         e.preventDefault();
-        alert('событие отработало')
+
+        const currentDate = convertTime(new Date());
+        dispatch(addNote({time: currentDate, note: noteValue}))
+
+        setNoteValue('')
     }
 
     return (
@@ -18,10 +32,14 @@ export const FormOfNote = () => {
             <Form.Group >
                 <FloatingLabel
                     controlId="inputNote"
-                    label="Название заметки"
                 > 
-                </FloatingLabel>
-                <Form.Control type="text"/>
+                    </FloatingLabel>
+                <Form.Control 
+                    name="inputValueOfNote" 
+                    type="text"
+                    value={noteValue}
+                    onChange={changeNoteHandler}
+                />
             </Form.Group>
             <Button 
                 variant="primary" 
