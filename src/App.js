@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { Stack } from 'react-bootstrap';
 import { FormOfNote } from './components/Form-of-note';
 import { ListOfNotes } from './components/List-of-notes';
+import { EditModal } from './components/Edit-modal';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <FormOfNote/>
         <ListOfNotes/>
       </Stack>
+      <EditModal/>
     </div>
   );
 }

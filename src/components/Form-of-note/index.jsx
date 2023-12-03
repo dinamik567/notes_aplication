@@ -16,7 +16,7 @@ export const FormOfNote = () => {
         e.preventDefault();
 
         const currentDate = convertTime(new Date());
-        dispatch(addNote({time: currentDate, note: noteValue}))
+        dispatch(addNote({id: Date.now(), time: currentDate, note: noteValue}))
         
         //Сброс значения инпута
         setNoteValue('')
