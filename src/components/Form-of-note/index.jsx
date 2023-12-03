@@ -17,7 +17,8 @@ export const FormOfNote = () => {
 
         const currentDate = convertTime(new Date());
         dispatch(addNote({time: currentDate, note: noteValue}))
-
+        
+        //Сброс значения инпута
         setNoteValue('')
     }
 

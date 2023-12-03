@@ -1,12 +1,13 @@
+import { useSelector } from 'react-redux'
 import './style.css'
 
-const count = 999
-
 export const Header = () => {
+    const notes = useSelector(state => state.notes);
+    
     return (
         <header className='header'>
             <h1 className='title'>Заметки</h1>
-            <span className='count'>({count})</span>
+            <span className='count'>({notes.length})</span>
         </header>
     )
 }

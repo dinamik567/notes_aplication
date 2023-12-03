@@ -4,12 +4,14 @@ import { useSelector } from "react-redux"
 
 export const ListOfNotes = () => {
     const notes = useSelector(state => state.notes);
-    console.log(notes)
+
     return (
         <Stack gap={3}> 
-            <Note/>
-            <Note/>
-            <Note/>
+            {notes?.map(note => <Note 
+                key={note.time} 
+                note={note.note} 
+                time={note.time} 
+            />)}
         </Stack>
     )
 }

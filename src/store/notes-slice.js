@@ -19,11 +19,14 @@ export const notesSlice = createSlice({
     name: 'counter',
     initialState,
     reducers: {
-        addNote: (state, action) => [...state, {time: action.payload.time, note: action.payload.note}]
+        addNote: (state, action) => [...state, {time: action.payload.time, note: action.payload.note}],
+        deleteNote: (state, action) => {
+            return [...state].filter(note => note.time !== action.payload)
+        }
     },
   })
   
   // Action creators are generated for each case reducer function
-  export const { addNote } = notesSlice.actions
+  export const { addNote, deleteNote } = notesSlice.actions
   
   export default notesSlice.reducer
