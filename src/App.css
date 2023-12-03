@@ -1,0 +1,17 @@
+.App {
+  font-family: 'Mont';
+}
+
+.wrapper {
+  margin: 120px auto 15px;
+  max-width: 1368px;
+  width: 100%;
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.form-adding-note {
+  margin-bottom: 32px;
+}
