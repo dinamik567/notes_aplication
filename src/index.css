@@ -12,3 +12,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+/*
+  Theming and customizing styles
+*/
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/*
+  Theming and customizing styles
+*/
+
+.btn-flat {
+  background-color: rgba(103, 87, 241, 1);
+  color: white;
+}
+
+.btn-flat:hover {
+  background-color: rgba(76, 62, 201, 1);
+}
+
+.btn-flat:active {
+  background-color: rgba(60, 47, 177, 1) !important;
+}
+

@@ -1,4 +1,9 @@
-.inputNote {
-    width: 100%;
-    max-width: 636px;
+.container {
+    margin: 0 auto;
+    height: 50px;
 }
+
+.input-add-note {
+    width: 100%;
+}
+

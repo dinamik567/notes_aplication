@@ -1,4 +1,4 @@
-import { Button, FloatingLabel, Form, Stack } from "react-bootstrap"
+import { Button, Container, Form, Row, Col } from "react-bootstrap"
 import { useDispatch } from "react-redux";
 import { addNote } from "../../store/notes-slice";
 import { convertTime } from "./utils";
@@ -23,31 +23,44 @@ export const FormOfNote = () => {
     }
 
     return (
-        <Stack 
+        <Form 
             style={{marginBottom: '32px'}}
-            as='form' 
-            direction="horizontal" 
-            gap={2}
             onSubmit={submitFormHandler}
         >
-            <Form.Group >
-                <FloatingLabel
-                    controlId="inputNote"
-                > 
-                    </FloatingLabel>
-                <Form.Control 
-                    name="inputValueOfNote" 
-                    type="text"
-                    value={noteValue}
-                    onChange={changeNoteHandler}
-                />
-            </Form.Group>
-            <Button 
-                variant="primary" 
-                type="submit"
-            >
-                Добавить заметку
-            </Button>
-        </Stack>
+            <Container style={{padding: 0}} fluid>
+                <Row>
+                    <Col 
+                        xl={9} 
+                        lg={9} 
+                        md
+                    >
+                        <Form.Control 
+                            style={{marginBottom: '15px'}}
+                            name="inputValueOfNote" 
+                            type="text"
+                            value={noteValue}
+                            onChange={changeNoteHandler}
+                            size="lg"
+                            placeholder="Название заметки"
+                        />                        
+                    </Col>
+                    <Col 
+                        xl={3} 
+                        lg={3} 
+                        md={4} 
+                        sm  
+                    >
+                        <Button 
+                            style={{display: 'block', marginLeft: 'auto'}}
+                            variant="flat" 
+                            size="lg"
+                            type="submit"
+                        >
+                            Добавить заметку
+                        </Button>  
+                    </Col>
+                </Row>
+            </Container>
+        </Form>
     )
 }

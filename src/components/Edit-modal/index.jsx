@@ -19,7 +19,7 @@ export function EditModal() {
 
   const submitFormHandler = (e) => {
     e.preventDefault();
-    console.log(editableNote)
+
     dispatch(editNote(editableNote));
     dispatch(togleShowModal());
   }
@@ -42,7 +42,7 @@ export function EditModal() {
               value={editableNote.note} 
               onChange={changeInputHandler}
             />
-            <Button variant="success">
+            <Button variant="success" type='submit'>
               ОК
             </Button>
           </Stack>
