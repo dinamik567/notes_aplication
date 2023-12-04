@@ -1,9 +1,15 @@
-.container {
-    margin: 0 auto;
-    height: 50px;
-}
-
 .input-add-note {
-    width: 100%;
+    margin-bottom: 15px;
 }
 
+.label-add-note {
+    color: rgba(173, 181, 189, 1);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+
+.button-add {
+    display: block;
+    margin-left: auto;
+}

@@ -1,6 +1,8 @@
 .App {
   font-family: 'Mont';
   padding: 0 15px;
+  margin-top: 120px;
+  margin-bottom: 15px;
 }
 
 .wrapper {

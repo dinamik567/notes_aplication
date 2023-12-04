@@ -9,7 +9,7 @@ import { EditModal } from './components/Edit-modal';
 function App() {
   return (
     <div className="App">
-      <Container xl>
+      <Container>
         <Row>
           <Col>
             <Header />

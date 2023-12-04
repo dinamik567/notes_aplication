@@ -1,18 +1,13 @@
-import { Form } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Stack from 'react-bootstrap/Stack';
+import { Form, Button, Modal, Stack } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { togleShowModal, changeEditableNote } from '../../store/modal-slice';
 import { editNote } from '../../store/notes-slice';
-
 
 export function EditModal() {
   const dispatch = useDispatch()
   const showModal = useSelector(state => state.modal.show);
   const editableNote = useSelector(state => state.modal.editableNote)
 
-  
   const buttonCancelClickHandler = () => {
       dispatch(togleShowModal())
   }

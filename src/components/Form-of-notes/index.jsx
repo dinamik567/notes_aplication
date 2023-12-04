@@ -1,4 +1,5 @@
 import { Button, Container, Form, Row, Col } from "react-bootstrap"
+import './style.css'
 import { useDispatch } from "react-redux";
 import { addNote } from "../../store/notes-slice";
 import { convertTime } from "./utils";
@@ -39,15 +40,24 @@ export const FormOfNote = () => {
                         lg={9} 
                         md
                     >
-                        <Form.Control 
-                            style={{marginBottom: '15px'}}
-                            name="inputValueOfNote" 
-                            type="text"
-                            value={noteValue}
-                            onChange={changeNoteHandler}
-                            size="lg"
-                            placeholder="Название заметки"
-                        />                        
+                        <Form.Floating >
+                            <Form.Control
+                                id="floatingInputNote"
+                                className="input-add-note"
+                                name="inputValueOfNote" 
+                                type="text"
+                                value={noteValue}
+                                onChange={changeNoteHandler}
+                                size="lg"
+                                placeholder="Название заметки"
+                            />
+                            <label 
+                                className="label-add-note" 
+                                htmlFor="floatingInputNote"
+                            >
+                                Название заметки
+                            </label>
+                        </Form.Floating>
                     </Col>
                     <Col 
                         xl={3} 
@@ -56,7 +66,7 @@ export const FormOfNote = () => {
                         sm  
                     >
                         <Button 
-                            style={{display: 'block', marginLeft: 'auto'}}
+                            className="button-add"
                             variant="flat" 
                             size="lg"
                             type="submit"
