@@ -15,6 +15,11 @@ export const FormOfNote = () => {
     const submitFormHandler = (e) => {
         e.preventDefault();
 
+        //Проверка на пустую строку
+        if (noteValue.trim() === '') {
+            return
+        }
+
         const currentDate = convertTime(new Date());
         dispatch(addNote({id: Date.now(), time: currentDate, note: noteValue}))
         
